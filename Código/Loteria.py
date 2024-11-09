@@ -5,13 +5,17 @@ class Loteria:
     def __init__ (self, value, apostador):
         self.value = value
         self.apostador = apostador
+
+    # new method
+    @classmethod
+    def changeProbability(self, nprobalility):
+        self.probability = nprobalility
     
     def payMoney(self, gain):
         self.apostador.wallet += gain
     
     def recieveMoney(self):
         self.apostador.wallet -= self.value
-    
     def playGame(self):
         a = random.randint(0,1)
         if (a < self.probability):
